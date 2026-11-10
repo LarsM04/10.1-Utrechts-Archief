@@ -1,0 +1,60 @@
+/* ==========================================
+   Ontmoet de Oudegracht - algemene stijl
+   ========================================== */
+
+/* Kleuren uit de huisstijl van Het Utrechts Archief */
+:root {
+    --kleur-paars: #010044;
+    --kleur-groenbeige: #b2910a;
+    --kleur-rood: #ee2d27;
+    --kleur-groen: #008899;
+    --kleur-wit: #ffffff;
+    --kleur-tekst: #1a1a1a;
+}
+
+/* Basis */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--kleur-tekst);
+    background-color: var(--kleur-wit);
+}
+
+/* Duidelijk zichtbare focus voor toetsenbordgebruikers */
+:focus-visible {
+    outline: 3px solid var(--kleur-paars);
+    outline-offset: 3px;
+}
+
+/* Header */
+.site-header {
+    padding: 1rem 2rem;
+    color: var(--kleur-wit);
+    background-color: var(--kleur-paars);
+}
+
+.site-header h1 {
+    margin: 0;
+}
+
+/* Inhoud */
+.site-main {
+    padding: 2rem;
+}
+
+/* Footer */
+.site-footer {
+    padding: 1rem 2rem;
+    color: var(--kleur-wit);
+    background-color: var(--kleur-paars);
+}
+
+.site-footer p {
+    margin: 0;
+}

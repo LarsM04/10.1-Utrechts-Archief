@@ -1,0 +1,12 @@
+# Bestanden van de opdrachtgever en van school (briefing, huisstijlmanual, presentatie)
+# Deze staan alleen lokaal, omdat ze niet van ons zijn en de repo openbaar is
+docs/opdracht/
+
+# Bestanden van het besturingssysteem
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Instellingen van de editor
+.vscode/
+.idea/
