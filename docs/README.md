@@ -10,6 +10,6 @@ In deze map staan de documenten die bij het project horen.
 | Offerte | Klaar: [offerte.pdf](offerte.pdf) ([Word](offerte.docx)) |
 | Testrapport | Nog maken |
 
-Het logboek houd ik bij met de commits in deze repository.
+Wat ik per werkdag heb gedaan, staat in het [logboek](logboek.md) en in de commits van deze repository.
 
 De briefing, de huisstijlmanual en de presentatie over toegankelijkheid staan niet in deze repository. Die bestanden zijn van de opdrachtgever en van school en zijn te vinden op de Notion pagina van de module.
