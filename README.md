@@ -2,12 +2,11 @@
 
 Schoolproject voor Het Utrechts Archief (HUA), module 6.1 van de opleiding Webdevelopment (GLU), schooljaar 2026-2027.
 
-In maart 2027 opent Het Utrechts Archief de tijdelijke tentoonstelling **Ontmoet de Oudegracht**, omdat de Oudegracht in 2027 900 jaar bestaat. Voor deze tentoonstelling maken wij een interactieve webapplicatie rond een filmopname uit 1929. De film is gemaakt vanaf een varende boot op de Oudegracht, van de Gaardbrug tot de Bezembrug.
+In maart 2027 opent Het Utrechts Archief de tijdelijke tentoonstelling **Ontmoet de Oudegracht**, omdat de Oudegracht in 2027 900 jaar bestaat. Voor deze tentoonstelling maak ik een interactieve webapplicatie rond een filmopname uit 1929. De film is gemaakt vanaf een varende boot op de Oudegracht, van de Gaardbrug tot de Bezembrug.
 
-## Makers
+## Maker
 
 - Lars
-- Sultan
 
 ## De opdracht
 
@@ -26,7 +25,7 @@ De opdrachtgever is Ellen Blom, educator bij Het Utrechts Archief. De doelgroep 
 
 - Een CMS waarmee medewerkers van het archief de applicatie zonder technische kennis kunnen beheren.
 - Het logo van Het Utrechts Archief in de applicatie.
-- Een knop die een pop-up (colofon) opent met informatie over het archief, de applicatie en de makers.
+- Een knop die een pop-up (colofon) opent met informatie over het archief, de applicatie en de maker.
 
 ### Wensen (geen must)
 
@@ -44,9 +43,9 @@ De opdrachtgever is Ellen Blom, educator bij Het Utrechts Archief. De doelgroep 
 
 ## Toegankelijkheid
 
-Het Utrechts Archief is een overheidsinstelling, daarom moet de applicatie voldoen aan WCAG 2.1 AA. Wij letten op de vier principes: waarneembaar, bedienbaar, begrijpelijk en robuust.
+Het Utrechts Archief is een overheidsinstelling, daarom moet de applicatie voldoen aan WCAG 2.1 AA. Ik let op de vier principes: waarneembaar, bedienbaar, begrijpelijk en robuust.
 
-Waar wij tijdens het bouwen op letten:
+Waar ik tijdens het bouwen op let:
 
 - Semantische HTML (`header`, `nav`, `main`, `footer`) en een goede volgorde van koppen.
 - Alt-teksten bij afbeeldingen en labels bij formuliervelden.
@@ -55,7 +54,7 @@ Waar wij tijdens het bouwen op letten:
 - De layout blijft werken als je inzoomt tot 200%.
 - ARIA alleen gebruiken als HTML zelf niet genoeg is.
 
-Testen doen wij met Lighthouse, Axe DevTools, een screenreader en alleen het toetsenbord.
+Testen doe ik met Lighthouse, Axe DevTools, een screenreader en alleen het toetsenbord.
 
 Handige links:
 
@@ -74,7 +73,7 @@ src/            de broncode
   js/           de JavaScript bestanden
 ```
 
-De code houden wij simpel en overzichtelijk. HTML, CSS en JavaScript staan in aparte bestanden.
+De code houd ik simpel en overzichtelijk. HTML, CSS en JavaScript staan in aparte bestanden.
 
 ## De applicatie bekijken
 
