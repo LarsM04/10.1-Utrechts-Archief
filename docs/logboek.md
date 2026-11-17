@@ -5,7 +5,7 @@ Ik werk alleen aan deze opdracht, op dinsdag van 12:15 tot 16:30 (4,25 uur). In 
 | Datum | Uren | Wat |
 | --- | --- | --- |
 | Dinsdag 10 november 2026 | 4,25 | Start opdracht, GitHub-repository en README |
-| Dinsdag 17 november 2026 | 4,25 | Offerte en debriefing |
+| Dinsdag 17 november 2026 | 4,25 | Offerte, debriefing en plan van aanpak |
 | **Totaal** | **8,5 van 19** | |
 
 ## Dinsdag 10 november 2026
@@ -19,3 +19,4 @@ Ik werk alleen aan deze opdracht, op dinsdag van 12:15 tot 16:30 (4,25 uur). In 
 - Offerte gemaakt volgens het format van school: 19 uur tegen € 60 per uur, met planning en voorwaarden. De offerte is geprint.
 - Debriefing gemaakt volgens het format van school, op basis van de briefing en de vragen en antwoorden op Notion.
 - Dit logboek toegevoegd.
+- Plan van aanpak gemaakt volgens het format van school, met SMART-doelen, SCRUM per dinsdag, planning en risicoanalyse.
