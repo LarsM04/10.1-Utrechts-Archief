@@ -5,7 +5,7 @@ Ik werk alleen aan deze opdracht, op dinsdag van 12:15 tot 16:30 (4,25 uur). In 
 | Datum | Uren | Wat |
 | --- | --- | --- |
 | Dinsdag 10 november 2026 | 4,25 | Start opdracht, GitHub-repository en README |
-| Dinsdag 17 november 2026 | 4,25 | Offerte, debriefing en plan van aanpak |
+| Dinsdag 17 november 2026 | 4,25 | Offerte, debriefing, plan van aanpak en technisch ontwerp |
 | **Totaal** | **8,5 van 19** | |
 
 ## Dinsdag 10 november 2026
@@ -21,3 +21,4 @@ Ik werk alleen aan deze opdracht, op dinsdag van 12:15 tot 16:30 (4,25 uur). In 
 - Dit logboek toegevoegd.
 - Plan van aanpak gemaakt volgens het format van school, met SMART-doelen, SCRUM per dinsdag, planning en risicoanalyse.
 - Takenbord in GitHub Projects gemaakt met de kolommen Te doen, Bezig en Klaar en alle taken uit de planning.
+- Technisch ontwerp gemaakt volgens het format van school: techniek (HTML, CSS, JavaScript, PHP en MySQL), database met ERD, beveiliging, wireframes en testgevallen.
