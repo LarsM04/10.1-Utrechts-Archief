@@ -20,3 +20,4 @@ Ik werk alleen aan deze opdracht, op dinsdag van 12:15 tot 16:30 (4,25 uur). In 
 - Debriefing gemaakt volgens het format van school, op basis van de briefing en de vragen en antwoorden op Notion.
 - Dit logboek toegevoegd.
 - Plan van aanpak gemaakt volgens het format van school, met SMART-doelen, SCRUM per dinsdag, planning en risicoanalyse.
+- Takenbord in GitHub Projects gemaakt met de kolommen Te doen, Bezig en Klaar en alle taken uit de planning.
