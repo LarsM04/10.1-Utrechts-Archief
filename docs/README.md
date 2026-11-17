@@ -7,7 +7,7 @@ In deze map staan de documenten die bij het project horen.
 | Debriefing | Nog maken |
 | Technisch ontwerp | Nog maken |
 | Plan van aanpak en planning | Nog maken |
-| Offerte | Nog maken |
+| Offerte | Klaar: [offerte.pdf](offerte.pdf) ([Word](offerte.docx)) |
 | Testrapport | Nog maken |
 
 Het logboek houd ik bij met de commits in deze repository.
