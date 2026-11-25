@@ -6,6 +6,7 @@ In deze map staan de documenten die bij het project horen.
 | --- | --- |
 | Debriefing | Klaar: [debriefing.pdf](debriefing.pdf) ([Word](debriefing.docx)) |
 | Technisch ontwerp | Klaar: [technisch-ontwerp.pdf](technisch-ontwerp.pdf) ([Word](technisch-ontwerp.docx)) |
+| Schermontwerp | Klaar: [schermontwerp.md](schermontwerp.md) |
 | Plan van aanpak en planning | Klaar: [plan-van-aanpak.pdf](plan-van-aanpak.pdf) ([Word](plan-van-aanpak.docx)) |
 | Offerte | Klaar: [offerte.pdf](offerte.pdf) ([Word](offerte.docx)) |
 | Testrapport | Nog maken |
