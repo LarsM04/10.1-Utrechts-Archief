@@ -1,0 +1,192 @@
+[
+    {
+        "id": 1,
+        "nummer": "1",
+        "titel": "De Gaardbrug",
+        "tekst": "De Gaardbrug is een van de bruggen over de Utrechtse Oudegracht en ontleent haar naam aan de vroegere bisschoppelijke tuin, die ook wel de ‘gaard’ werd genoemd. Vanaf de brug is er zicht op de Oudegracht en de Domtoren, dit maakt het een populaire plek om foto’s te maken.",
+        "tijd": 3,
+        "lat": 52.0892,
+        "lng": 5.12117,
+        "afbeeldingen": [
+            {
+                "bestand": "media/punten/22122.jpg",
+                "alt": "Donkere boog van een brug, met daarachter verlichte huizen en nog een brug",
+                "bijschrift": "Doorkijk onder de boog van de Gaardbrug, met op de achtergrond de Maartensbrug en rechts de Donkere Gaard.",
+                "bron": "Het Utrechts Archief, nr. 22122 (C. Stevens)"
+            },
+            {
+                "bestand": "media/punten/903109.jpg",
+                "alt": "Fietsen en bloembakken aan de leuning van de brug, met uitzicht over de gracht",
+                "bijschrift": "Gezicht op de Oudegracht vanaf de Gaardbrug, met links de achtergevels van de panden aan de Lijnmarkt en rechts de Donkere Gaard.",
+                "bron": "Het Utrechts Archief, nr. 903109"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nummer": "1a",
+        "titel": "De middeleeuwse werven en werfkelders",
+        "tekst": "Langs de gracht zie je de bijzondere combinatie van een hoger gelegen straat en een lager gelegen werf aan het water. Handelaren gebruikten de werfkelders om goederen op te slaan en rechtstreeks vanaf schepen aan te voeren. Zo groeide de Oudegracht uit tot een belangrijke handelsroute door de stad.",
+        "tijd": 20,
+        "lat": 52.0888,
+        "lng": 5.12133,
+        "afbeeldingen": [
+            {
+                "bestand": "media/punten/67316.jpg",
+                "alt": "Werf aan het water met deuren van kelders in de kademuur en een trap naar de straat",
+                "bijschrift": "Gezicht op de werfkelder ter hoogte van het pand Oudegracht 190, met links een gedeelte van de Gaardbrug.",
+                "bron": "Het Utrechts Archief, nr. 67316 (Gemeentearchief Utrecht)"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nummer": "1b",
+        "titel": "Café De Postillon",
+        "tekst": "",
+        "tijd": 38,
+        "lat": 52.08928,
+        "lng": 5.12112,
+        "afbeeldingen": [
+            {
+                "bestand": "media/punten/906087.jpg",
+                "alt": "Hoekhuis van vier verdiepingen met een café op de begane grond",
+                "bijschrift": "Gezicht op de voorgevel van het pand Lijnmarkt 50 (Café de Postillon) bij de Gaardbrug.",
+                "bron": "Het Utrechts Archief, nr. 906087 (D.C. Goosen)"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nummer": "1c",
+        "titel": "Lijnmarkt en Lichte Gaard",
+        "tekst": "",
+        "tijd": 61,
+        "lat": 52.0897,
+        "lng": 5.12087,
+        "afbeeldingen": [
+            {
+                "bestand": "media/punten/1587.jpg",
+                "alt": "Oude ingekleurde kaart van de gracht met huizen recht aan het water",
+                "bijschrift": "Gezicht op de Oudegracht met op de achtergrond de Maartensbrug; links de achtergevels van enkele huizen aan de Lijnmarkt; rechts de achtergevels van de huizen Donkere Gaard 1-13.",
+                "bron": "Het Utrechts Archief, nr. 1587"
+            },
+            {
+                "bestand": "media/punten/835793.jpg",
+                "alt": "Brede gracht met een brug met twee bogen en huizen aan beide kanten",
+                "bijschrift": "Gezicht over de Oudegracht met rechts de Lichte Gaard, in het midden de Maartensbrug en links de achtergevels van enkele huizen aan de Lijnmarkt.",
+                "bron": "Het Utrechts Archief, nr. 835793 (Fotodienst GAU)"
+            },
+            {
+                "bestand": "media/punten/852287.jpg",
+                "alt": "Smalle foto van de gracht met hoge huizen die in het water weerspiegelen",
+                "bijschrift": "Gezicht op de Oudegracht vanaf de Gaardbrug, met links de achterzijdes van de huizen aan de Lijnmarkt, rechts de Donkere Gaard en op de achtergrond de Maartensbrug.",
+                "bron": "Het Utrechts Archief, nr. 852287 (Euro Color Cards)"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "nummer": "2",
+        "titel": "Maartensbrug",
+        "tekst": "De Maartensbrug is de oudste brug over de Utrechtse Oudegracht. De brug werd oorspronkelijk de Borchbrug genoemd, omdat hij toegang gaf tot de bisschoppelijke burcht op de plek van het huidige Domplein. De eerste stenen brug werd in 1404 gebouwd en in 1906 verbreed om ruimte te maken voor het toenemende verkeer en de paardentram. De huidige naam verwijst naar Sint-Maarten, de beschermheilige van Utrecht.",
+        "tijd": 77,
+        "lat": 52.0904,
+        "lng": 5.12039,
+        "afbeeldingen": [
+            {
+                "bestand": "media/punten/822378.jpg",
+                "alt": "Brug met twee bogen die in het gladde water weerspiegelen",
+                "bijschrift": "Gezicht op de Maartensbrug vanaf de Gaardbrug; op de achtergrond het Stadhuis.",
+                "bron": "Het Utrechts Archief, nr. 822378 (Fotodienst GAU)"
+            },
+            {
+                "bestand": "media/punten/406922.jpg",
+                "alt": "Man op een schuit vol kratten, net voor de boog van een brug",
+                "bijschrift": "Een schuit met kratten in de Oudegracht, ter hoogte van de Maartensbrug.",
+                "bron": "Het Utrechts Archief, nr. 406922 (S. Budde)"
+            },
+            {
+                "bestand": "media/punten/822375.jpg",
+                "alt": "De twee bogen van de brug van dichtbij, met fietsen aan de leuning",
+                "bijschrift": "Gezicht op de Maartensbrug vanaf de werf onder de Lichte Gaard; op de achtergrond de achtergevels van enkele panden aan de Choorstraat.",
+                "bron": "Het Utrechts Archief, nr. 822375 (Fotodienst GAU)"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "nummer": "2a",
+        "titel": "Vismarkt",
+        "tekst": "De Vismarkt is de oudste markt van Utrecht. Al eeuwenlang wordt op het gedeelte van de Oudegracht tussen de Stadhuisbrug en de Maartensbrug vis verhandeld. Dit deel van de gracht ontleent zijn naam dan ook aan de markt.",
+        "tijd": 103,
+        "lat": 52.09064,
+        "lng": 5.1203,
+        "afbeeldingen": [
+            {
+                "bestand": "media/punten/816418.jpg",
+                "alt": "Kademuur met houten steigers en een opengebroken kelder aan het water",
+                "bijschrift": "De restauratie van de kelder aan de Zoutmarkt achter het pand Choorstraat 42. Links een gedeelte van de Maartensbrug.",
+                "bron": "Het Utrechts Archief, nr. 816418 (F.F. van der Werf)"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "nummer": "3",
+        "titel": "Kalisbrug",
+        "tekst": "De Kalisbrug, ook wel Visbrug genoemd, vormde een belangrijk onderdeel van de Vismarkt en diende als visafslag. Wanneer er voldoende vis was aangevoerd, kondigde de stadsomroeper de verkoop aan. De vis werd vers gehouden in viskaren die in de gracht hingen en verkocht vanaf visbanken op de brug. De traditionele vismarkt verdween aan het begin van de 20e eeuw, maar in de winkels aan de Vismarkt bleven nog lange tijd visverkopers actief. De laatste traditionele viswinkel sloot in 1970.",
+        "tijd": 114,
+        "lat": 52.09088,
+        "lng": 5.12023,
+        "afbeeldingen": [
+            {
+                "bestand": "media/punten/603347.jpg",
+                "alt": "Tekening van een brug met een huisje met puntdak, veel mensen en marktkramen",
+                "bijschrift": "Gezicht op de Oudegracht en de Vismarkt uit het zuiden, met de Kalisbrug met het visafslaghuisje en op de achtergrond de zijgevel van het stadhuis.",
+                "bron": "Het Utrechts Archief, nr. 603347 (W.C. van Dijk)"
+            },
+            {
+                "bestand": "media/punten/852298.jpg",
+                "alt": "Terras op de werf met rode stoelen, met erachter een brug",
+                "bijschrift": "Gezicht op de Kalisbrug, met op de voorgrond een terras op de werf langs de Oudegracht, geheel links de huizen aan de Zoutmarkt en rechts de Vismarkt. Op de achtergrond het Stadhuis.",
+                "bron": "Het Utrechts Archief, nr. 852298 (Euro Color Cards)"
+            },
+            {
+                "bestand": "media/punten/852310.jpg",
+                "alt": "Mensen in gekleurde stoelen op een zonnig terras op de brug",
+                "bijschrift": "Het terras op de Kalisbrug, met op de achtergrond de panden aan de Vismarkt.",
+                "bron": "Het Utrechts Archief, nr. 852310 (Euro Color Cards)"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "nummer": "4",
+        "titel": "De Stadhuisbrug en het stadhuis",
+        "tekst": "De Stadhuisbrug dankt haar naam aan het Utrechtse stadhuis dat direct aan de brug ligt. Op deze plek zetelde het stadsbestuur al vanaf de 14e eeuw. De brug ontstond in de 16e eeuw, toen twee bestaande bruggen, de Broodbrug en de Huidenbrug, met elkaar werden verbonden en overkluisd. Het plein dat hierdoor ontstond, werd gebruikt voor openbare afkondigingen van besluiten van het stadsbestuur en kreeg later de naam Stadhuisbrug.",
+        "tijd": 138,
+        "lat": 52.09148,
+        "lng": 5.11974,
+        "afbeeldingen": [
+            {
+                "bestand": "media/punten/83650.jpg",
+                "alt": "Boog van de brug boven het water, in zwart-wit",
+                "bijschrift": "Gezicht op de westzijde van de Stadhuisbrug over de Oudegracht, uit het zuidwesten.",
+                "bron": "Het Utrechts Archief, nr. 83650 (Fotodienst GAU)"
+            },
+            {
+                "bestand": "media/punten/119657.jpg",
+                "alt": "Werf langs het water met bomen in herfstkleuren",
+                "bijschrift": "Gezicht op de werf langs de Oudegracht, tussen de Bezembrug (achtergrond) en de Stadhuisbrug.",
+                "bron": "Het Utrechts Archief, nr. 119657 (W.M.P.A. en M.L. Bakx)"
+            },
+            {
+                "bestand": "media/punten/856849.jpg",
+                "alt": "Terras met parasols op de werf onder een grote boom",
+                "bijschrift": "Gezicht op het terras aan de Oudegracht ter hoogte van de Stadhuisbrug.",
+                "bron": "Het Utrechts Archief, nr. 856849 (J.M. Vermeulen)"
+            }
+        ]
+    }
+]
