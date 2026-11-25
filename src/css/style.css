@@ -1,60 +1,1009 @@
 /* ==========================================
-   Ontmoet de Oudegracht - algemene stijl
+   Ontmoet de Oudegracht
    ========================================== */
 
-/* Kleuren uit de huisstijl van Het Utrechts Archief */
+/* Vrije letter die lijkt op de Akzidenz Grotesk van Het Utrechts Archief */
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: url("../fonts/hanken-grotesk.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* Kleuren van hetutrechtsarchief.nl */
 :root {
-    --kleur-paars: #010044;
-    --kleur-groenbeige: #b2910a;
-    --kleur-rood: #ee2d27;
-    --kleur-groen: #008899;
-    --kleur-wit: #ffffff;
-    --kleur-tekst: #1a1a1a;
+    --rood: #d72f19;
+    --rood-donker: #b02412;
+    --groen: #247065;
+    --blauw: #455cc7;
+    --tekst: #333333;
+    --grijs: #f6f6f6;
+    --grijs-midden: #e1e1e1;
+    --grijs-donker: #595959;
+    --wit: #ffffff;
+
+    --rond: 1.25rem;
+    --ruimte: 1.5rem;
+    --schaduw: 0 0.5rem 2rem rgb(0 0 0 / 25%);
+
+    /* Alles is in rem, dus op een groot digibord groeit het hele ontwerp mee */
+    font-size: clamp(1rem, 0.5rem + 0.55vw, 2rem);
 }
 
 /* Basis */
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.5;
-    color: var(--kleur-tekst);
-    background-color: var(--kleur-wit);
+    font: 500 1.125rem/1.45 "Hanken Grotesk", Arial, Helvetica, sans-serif;
+    color: var(--tekst);
+    background-color: var(--grijs);
 }
 
-/* Duidelijk zichtbare focus voor toetsenbordgebruikers */
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+/* Duidelijk zichtbare focus: wit met donker eromheen, dus zichtbaar op elke achtergrond */
 :focus-visible {
-    outline: 3px solid var(--kleur-paars);
-    outline-offset: 3px;
+    outline: 0.2rem solid var(--wit);
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.4rem var(--tekst);
 }
 
-/* Header */
-.site-header {
-    padding: 1rem 2rem;
-    color: var(--kleur-wit);
-    background-color: var(--kleur-paars);
+.alleen-voorlezen {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
 }
 
-.site-header h1 {
+.icoon {
+    flex: none;
+    width: 1.5em;
+    height: 1.5em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icoon-vol {
+    fill: currentColor;
+}
+
+/* Knoppen */
+.knop {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    min-height: 3.25rem;
+    padding: 0 1em;
+    border: 0;
+    border-radius: 99rem;
+    font: inherit;
+    font-weight: 700;
+    color: var(--tekst);
+    background-color: transparent;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: background-color 0.15s, transform 0.15s;
+}
+
+.knop:active {
+    transform: scale(0.96);
+}
+
+.knop-wit {
+    background-color: var(--wit);
+    box-shadow: var(--schaduw);
+}
+
+.knop-stil:active,
+.knop-wit:active {
+    background-color: var(--grijs-midden);
+}
+
+.knop-speel,
+.knop-start {
+    color: var(--wit);
+    background-color: var(--rood);
+}
+
+.knop-speel:active,
+.knop-start:active {
+    background-color: var(--rood-donker);
+}
+
+.knop-start {
+    min-height: 4rem;
+    padding: 0 1.75em;
+    font-size: 1.25rem;
+}
+
+.knop-speel {
+    min-width: 8.25em;
+    min-height: 3.75rem;
+}
+
+#speel-knop .icoon-pauze,
+#speel-knop.speelt .icoon-speel {
+    display: none;
+}
+
+#speel-knop.speelt .icoon-pauze {
+    display: block;
+}
+
+.knop-tekstlink {
+    flex: none;
+    gap: 0.3em;
+    padding: 0 0.5em;
+    margin-right: -0.5em;
+    font-size: 1rem;
+    color: var(--rood);
+}
+
+/* Kop: het logo in een rood vlak, wit op kleur zoals in de huisstijl */
+.kop {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 1rem;
+    background-color: var(--wit);
+}
+
+.kop-logo {
+    width: 5.5rem;
+    height: auto;
+    padding: 0.5rem;
+    background-color: var(--rood);
+}
+
+.kop-titel {
+    flex: 1;
+    font-size: 1.25rem;
+}
+
+/* Op een klein of staand scherm staat alles onder elkaar */
+.scherm {
+    display: flex;
+    flex-direction: column;
+}
+
+.film-beeld {
+    background-color: #000000;
+    overflow: hidden;
+}
+
+#film {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.bediening {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: var(--wit);
+}
+
+.info-vak {
+    padding: 1rem;
+}
+
+.kaart-vak {
+    height: 34rem;
+}
+
+.melding {
+    padding: 1rem 1.5rem;
+    border-left: 0.75rem solid var(--rood);
+    border-radius: var(--rond);
+    margin-bottom: 1rem;
+    background-color: var(--wit);
+}
+
+/* Tijdlijn */
+.tijdlijn-vak {
+    --greep: 2rem;
+    --deel: 0%;
+
+    position: relative;
+    flex: 1 0 70%;
+    height: 3rem;
+}
+
+/* De balk: rood tot waar de film is */
+.tijdlijn-vak::before {
+    position: absolute;
+    inset: calc(50% - 0.25rem) 0;
+    border-radius: 1rem;
+    background: linear-gradient(to right, var(--rood) var(--deel), #8a8a8a var(--deel));
+    content: "";
+}
+
+.tijdlijn {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 99rem;
+    background: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.tijdlijn::-webkit-slider-runnable-track {
+    height: 0.5rem;
+}
+
+.tijdlijn::-webkit-slider-thumb {
+    width: var(--greep);
+    height: var(--greep);
+    margin-top: calc((0.5rem - var(--greep)) / 2);
+    border: 0.35rem solid var(--wit);
+    border-radius: 50%;
+    background-color: var(--rood);
+    box-shadow: 0 0.1rem 0.5rem rgb(0 0 0 / 40%);
+    appearance: none;
+}
+
+.tijdlijn::-moz-range-thumb {
+    width: var(--greep);
+    height: var(--greep);
+    border: 0.35rem solid var(--wit);
+    border-radius: 50%;
+    background-color: var(--rood);
+    box-shadow: 0 0.1rem 0.5rem rgb(0 0 0 / 40%);
+}
+
+/* Een rondje bij elk punt. De greep ligt eroverheen. */
+.tijdlijn-punten {
+    position: absolute;
+    inset: 0 calc(var(--greep) / 2);
+}
+
+.tijdlijn-punten span {
+    position: absolute;
+    top: 50%;
+    width: 1rem;
+    height: 1rem;
+    border: 0.2rem solid var(--tekst);
+    border-radius: 50%;
+    background-color: var(--wit);
+    transform: translate(-50%, -50%);
+}
+
+.tijd {
+    min-width: 3rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+}
+
+/* Informatiekaartje */
+.info-kaartje {
+    display: grid;
+    gap: 0.75rem 1.25rem;
+    padding: 1rem 1.25rem 1.25rem;
+    border-radius: var(--rond);
+    background-color: var(--wit);
+    box-shadow: var(--schaduw);
+    animation: omhoog 0.4s ease-out;
+}
+
+.info-kop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.info-kop h2 {
+    font-size: 1.5rem;
+}
+
+.info-foto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
     margin: 0;
 }
 
-/* Inhoud */
-.site-main {
-    padding: 2rem;
+.info-foto figcaption {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    color: var(--grijs-donker);
 }
 
-/* Footer */
-.site-footer {
-    padding: 1rem 2rem;
-    color: var(--kleur-wit);
-    background-color: var(--kleur-paars);
+.foto-knop {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0.75rem;
+    background-color: var(--grijs-midden);
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.site-footer p {
+.foto-knop img {
+    display: block;
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+}
+
+.foto-knop .icoon {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0.45rem;
+    border-radius: 50%;
+    color: var(--tekst);
+    background-color: var(--wit);
+}
+
+.foto-kiezer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.knop-rond {
+    width: 3rem;
+    min-height: 3rem;
+    padding: 0;
+    background-color: var(--grijs);
+}
+
+.knop-rond:active {
+    background-color: var(--grijs-midden);
+}
+
+@keyframes omhoog {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+}
+
+/* Kaart */
+#kaart {
+    z-index: 0; /* houdt de lagen van de kaart achter de rest van de pagina */
+    width: 100%;
+    height: 100%;
+    font: inherit;
+    background-color: var(--wit);
+}
+
+.kaart-gebouw {
+    fill: #e9e6e1;
+    stroke: #e9e6e1;
+}
+
+.kaart-water {
+    fill: #cdd5f6;
+    stroke: none;
+}
+
+.kaart-groen {
+    fill: #cfe3df;
+    stroke: none;
+}
+
+.kaart-brug {
+    fill: #ffffff;
+    stroke: #c9c4bb;
+}
+
+.kaart-bijzonder {
+    fill: var(--groen);
+    stroke: #ffffff;
+}
+
+.kaart-route {
+    stroke: var(--blauw);
+    stroke-dasharray: 2 10;
+}
+
+.kaart-gevaren {
+    stroke: var(--rood);
+}
+
+.kaart-naam {
+    padding: 0.15em 0.6em;
+    border: 0;
+    border-radius: 99rem;
+    font: 700 0.85rem/1.3 "Hanken Grotesk", Arial, sans-serif;
+    color: var(--groen);
+    background-color: var(--wit);
+    box-shadow: none;
+}
+
+.kaart-naam::before {
+    display: none;
+}
+
+#kaart .leaflet-bar {
+    border: 0;
+    border-radius: 99rem;
+    box-shadow: 0 0.2rem 0.8rem rgb(0 0 0 / 25%);
+    overflow: hidden;
+}
+
+#kaart .leaflet-bar a {
+    width: 3rem;
+    height: 3rem;
+    border-color: var(--grijs-midden);
+    font: 700 1.5rem/3rem "Hanken Grotesk", Arial, sans-serif;
+    color: var(--tekst);
+}
+
+#kaart .leaflet-control-attribution {
+    padding: 0.1rem 0.6rem;
+    font-size: 0.75rem;
+    color: var(--tekst);
+    background-color: rgb(255 255 255 / 90%);
+}
+
+.kaart-punt {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 48px;
+    min-height: 48px;
+    border: 0.2rem solid var(--tekst);
+    border-radius: 50%;
+    margin-top: min(-1.375rem, -24px);
+    font: 700 1.25rem/1 "Hanken Grotesk", Arial, sans-serif;
+    color: var(--tekst);
+    background-color: var(--wit);
+    box-shadow: 0 0.2rem 0.6rem rgb(0 0 0 / 25%);
+}
+
+/* Het punt waar je bent: donker, en met de naam erbij */
+.kaart-punt.actief {
+    color: var(--wit);
+    background-color: var(--tekst);
+}
+
+/* Het punt staat naast het water, met een streepje naar de plek */
+.kaart-punt.rechts {
+    margin-left: 1.1rem;
+}
+
+.kaart-punt.links {
+    margin-left: calc(-1.1rem + min(-2.75rem, -48px));
+}
+
+.kaart-punt::before {
+    position: absolute;
+    top: calc(50% - 0.1rem);
+    right: 100%;
+    width: 1.1rem;
+    height: 0.2rem;
+    background-color: var(--tekst);
+    content: "";
+}
+
+.kaart-punt.links::before {
+    right: auto;
+    left: 100%;
+}
+
+.punt-naam {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 0.5rem);
+    display: none;
+    width: max-content;
+    max-width: 10rem;
+    padding: 0.45em 0.8em;
+    border-radius: 1rem;
+    font-size: 1rem;
+    line-height: 1.15;
+    color: var(--wit);
+    background-color: var(--tekst);
+    transform: translateY(-50%);
+}
+
+.links .punt-naam {
+    right: calc(100% + 0.5rem);
+    left: auto;
+}
+
+.kaart-punt.actief .punt-naam {
+    display: block;
+}
+
+.kaart-punt:focus-visible {
+    z-index: 2000 !important; /* Leaflet zet de z-index als inline stijl */
+}
+
+.kaart-boot {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: -1.75rem 0 0 -1.75rem;
+}
+
+.kaart-boot::before {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-color: var(--rood);
+    animation: puls 2.5s ease-out infinite;
+    content: "";
+}
+
+.kaart-boot svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.kaart-boot.vaart {
+    transition: transform 0.8s ease-in-out;
+}
+
+@keyframes puls {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1.9);
+    }
+}
+
+/* Startscherm: over de hele film */
+.startscherm {
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    max-height: none;
+    padding: 0;
+    border: 0;
     margin: 0;
+    color: var(--wit);
+    background-color: #1a1a1a;
+    overflow: auto;
+}
+
+.startscherm[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.startscherm::backdrop {
+    background: none;
+}
+
+.startscherm .kop-logo {
+    flex: none;
+    align-self: flex-start;
+    width: 8rem;
+    padding: 0.9rem;
+}
+
+/* Achter het startscherm is alleen de film te zien */
+body:has(.startscherm[open]) :is(.kop, .info-vak, .bediening, .kaart-vak) {
+    visibility: hidden;
+}
+
+.start-inhoud {
+    max-width: 78rem;
+    padding: 1.5rem;
+    margin-block: auto;
+}
+
+/* De schuine streepjes uit het logo */
+.streepjes {
+    font-size: 1.75rem;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: 0.15em;
+    color: #ff7a66;
+}
+
+.start-inhoud h2 {
+    max-width: 13em;
+    margin: 0.5rem 0 2rem;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    line-height: 1.02;
+    text-wrap: balance;
+}
+
+.stappen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1.5rem;
+    max-width: 62rem;
+    padding: 0;
+    margin: 0 0 2.5rem;
+    list-style: none;
+}
+
+.stappen li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 1rem;
+    border-top: 0.2rem solid var(--wit);
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+.stappen .icoon {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+.start-tekst {
+    max-width: 46rem;
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+}
+
+/* Foto groot */
+.foto-venster {
+    max-width: 94vw;
+    max-height: 94vh;
+    padding: 1.5rem;
+    border: 0;
+    border-radius: var(--rond);
+    color: var(--tekst);
+    background-color: var(--wit);
+    box-shadow: var(--schaduw);
+}
+
+.foto-venster img {
+    display: block;
+    width: min(60rem, 100%);
+    height: 62vh;
+    object-fit: contain;
+}
+
+.foto-venster p {
+    max-width: 60rem;
+    margin: 0.75rem 0;
+    font-size: 1rem;
+}
+
+.foto-balk {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.foto-balk .foto-kiezer {
+    gap: 1rem;
+}
+
+.foto-venster::backdrop {
+    background-color: rgb(15 15 15 / 80%);
+}
+
+/* Wachtstand: het hele scherm is de knop */
+.wachtstand {
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    max-height: none;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    background: none;
+}
+
+.wachtstand::backdrop {
+    background: none;
+}
+
+.wachtstand form {
+    height: 100%;
+}
+
+.wacht-knop {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border: 0;
+    font: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+.wacht-knop:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+.wacht-knop .knop {
+    box-shadow: var(--schaduw);
+    animation: deinen 2.5s ease-in-out infinite;
+}
+
+.wacht-knop:focus-visible .knop {
+    outline: 0.2rem solid var(--wit);
+    box-shadow: 0 0 0 0.4rem var(--tekst);
+}
+
+@keyframes deinen {
+    50% {
+        transform: translateY(-0.5rem);
+    }
+}
+
+/* Tijdens de wachtstand zijn de knoppen niet nodig */
+body:has(.wachtstand[open]) :is(.bediening > *, #colofon-knop, #info-sluiten, .foto-knop .icoon) {
+    visibility: hidden;
+}
+
+body:has(.wachtstand[open]) .foto-kiezer {
+    display: none;
+}
+
+/* Colofon */
+.colofon {
+    width: min(92vw, 44rem);
+    max-height: 90vh;
+    padding: 0;
+    border: 0;
+    border-radius: var(--rond);
+    color: var(--tekst);
+    background-color: var(--wit);
+    box-shadow: var(--schaduw);
+    overflow: auto;
+}
+
+.colofon::backdrop {
+    background-color: rgb(15 15 15 / 70%);
+}
+
+.colofon-kop {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    color: var(--wit);
+    background-color: var(--rood);
+}
+
+.colofon-kop h2 {
+    font-size: 2rem;
+}
+
+.colofon-inhoud {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.colofon-inhoud h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.colofon-inhoud p {
+    margin-bottom: 1.25rem;
+}
+
+/* Groot liggend scherm: links de hele film, rechts de kaart en de informatie.
+   Er ligt niets over de film heen. */
+@media (min-width: 60rem) and (min-height: 40rem) and (orientation: landscape) {
+    :root {
+        --balk: 6rem;
+        --film: min(68vw, (100vh - var(--balk)) * 4 / 3);
+    }
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .kop {
+        position: absolute;
+        inset: 0 0 auto var(--film);
+        padding-right: var(--ruimte);
+        background: none;
+    }
+
+    .kop-logo {
+        width: 6rem;
+        padding: 0.65rem;
+    }
+
+    .kop-titel {
+        font-size: 1.6rem;
+    }
+
+    .scherm {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .film-vak {
+        display: flex;
+        flex-direction: column;
+        width: var(--film);
+        background-color: var(--wit);
+    }
+
+    .bediening {
+        flex: 1;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        padding: 0 1.5rem;
+        font-size: 1.125rem;
+    }
+
+    .tijdlijn-vak {
+        flex: 1;
+    }
+
+    .zijkant {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 1rem;
+        min-width: 0;
+        padding: 7rem var(--ruimte) var(--ruimte);
+    }
+
+    /* De kaart staat boven de informatie */
+    .kaart-vak {
+        order: -1;
+        flex: 1;
+        height: auto;
+        min-height: 0;
+        border-radius: var(--rond);
+        box-shadow: var(--schaduw);
+        overflow: hidden;
+    }
+
+    .info-vak {
+        padding: 0;
+    }
+
+    /* Foto links en tekst rechts. Zonder tekst staat de uitleg van de foto rechts. */
+    .info-kaartje {
+        grid-template-columns: 11.5rem minmax(0, 1fr);
+        max-height: 60vh;
+        font-size: 1rem;
+        overflow: auto;
+    }
+
+    .info-kop,
+    .zonder-tekst .info-foto {
+        grid-column: 1 / -1;
+    }
+
+    .foto-knop img {
+        height: 8.5rem;
+    }
+
+    .zonder-tekst .info-foto {
+        display: grid;
+        grid-template-columns: 60% minmax(0, 1fr);
+        grid-template-rows: 1fr auto;
+        gap: 0.5rem 1rem;
+    }
+
+    .zonder-tekst .foto-knop {
+        grid-row: 1 / 3;
+    }
+
+    .zonder-tekst .foto-knop img {
+        height: 13rem;
+    }
+
+    /* Tijdens het startscherm vult de film het hele scherm */
+    body:has(.startscherm[open]) .film-beeld {
+        position: fixed;
+        inset: 0;
+    }
+
+    body:has(.startscherm[open]) #film {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+
+    .startscherm {
+        background: linear-gradient(to right, rgb(15 15 15 / 80%), rgb(15 15 15 / 65%) 70%, rgb(15 15 15 / 40%));
+    }
+
+    /* De knop van de wachtstand staat onder de film */
+    .wacht-knop {
+        padding-right: calc(100vw - var(--film));
+    }
+
+    .start-inhoud {
+        padding: 0 8rem 6rem;
+    }
+}
+
+/* Laag scherm, zoals een laptop: iets kleinere film, zodat de kaart leesbaar blijft */
+@media (min-width: 60rem) and (min-height: 40rem) and (max-height: 53rem) and (max-aspect-ratio: 2 / 1) and (orientation: landscape) {
+    :root {
+        --film: min(60vw, (100vh - var(--balk)) * 4 / 3);
+    }
+
+    .info-kaartje {
+        grid-template-columns: 9rem minmax(0, 1fr);
+        max-height: 54vh;
+    }
+}
+
+/* Extra breed venster: kaart en informatie naast elkaar, dan zijn ze allebei groot genoeg */
+@media (min-width: 60rem) and (min-height: 40rem) and (min-aspect-ratio: 2 / 1) {
+    .zijkant {
+        flex-direction: row;
+    }
+
+    .zijkant:has(.info-kaartje[hidden]) {
+        flex-direction: column;
+    }
+
+    .info-kaartje {
+        grid-template-columns: minmax(0, 1fr);
+        width: 25rem;
+        max-height: calc(100vh - 9rem);
+    }
+
+    .foto-knop img {
+        height: 11rem;
+    }
+
+    .zonder-tekst .info-foto {
+        display: flex;
+    }
+}
+
+/* Minder beweging voor wie dat heeft ingesteld */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before {
+        animation: none !important;
+        transition: none !important;
+    }
 }

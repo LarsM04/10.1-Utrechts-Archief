@@ -4,21 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ontmoet de Oudegracht - Het Utrechts Archief</title>
+    <meta name="description" content="Vaar mee over de Oudegracht van 1929 en ontdek wat Het Utrechts Archief over elke plek bewaart.">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="lib/leaflet/leaflet.js" defer></script>
+    <script src="js/app.js" type="module"></script>
 </head>
 <body>
-    <header class="site-header">
-        <h1>Ontmoet de Oudegracht</h1>
+    <header class="kop">
+        <img class="kop-logo" src="img/logo-hua.svg" alt="Het Utrechts Archief" width="121" height="120">
+        <h1 class="kop-titel">Ontmoet de Oudegracht</h1>
+        <button class="knop knop-wit" id="colofon-knop" type="button">
+            <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7v.01"/></svg>
+            Colofon
+        </button>
     </header>
 
-    <main class="site-main">
-        <p>Hier komt de webapplicatie met de film van de Oudegracht uit 1929.</p>
+    <main class="scherm">
+        <section class="film-vak" aria-label="Film uit 1929">
+            <div class="film-beeld">
+                <video id="film" src="media/oudegracht-1929.mp4" muted playsinline preload="auto" aria-label="Film van de Oudegracht" aria-describedby="film-uitleg"></video>
+            </div>
+            <p class="alleen-voorlezen" id="film-uitleg">
+                Stille film uit 1929, gemaakt vanaf een boot op de Oudegracht. In beeld staat eerst de titel: Een vaart
+                door de Utrechtsche grachten met de daarlangs gelegen typische werven. De boot vaart onder de
+                Hamburgerbrug, de Gaardbrug, de Maartensbrug, de Kalisbrug en de Stadhuisbrug door. Bij elke plek
+                verschijnt een kaartje met uitleg.
+            </p>
+
+            <div class="bediening">
+                <button class="knop knop-speel" id="speel-knop" type="button">
+                    <svg class="icoon icoon-vol icoon-speel" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>
+                    <svg class="icoon icoon-vol icoon-pauze" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+                    <span class="knop-tekst">Afspelen</span>
+                </button>
+                <button class="knop knop-stil" id="terug-knop" type="button">
+                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 6l-6 6 6 6M19 6l-6 6 6 6"/></svg>
+                    Terug
+                </button>
+                <button class="knop knop-stil" id="vooruit-knop" type="button">
+                    Vooruit
+                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6l6 6-6 6M13 6l6 6-6 6"/></svg>
+                </button>
+                <div class="tijdlijn-vak">
+                    <div class="tijdlijn-punten" id="tijdlijn-punten" aria-hidden="true"></div>
+                    <input class="tijdlijn" id="tijdlijn" type="range" min="0" max="183" step="1" value="0" aria-label="Plek in de film">
+                </div>
+                <span class="tijd" id="tijd" aria-hidden="true">0:00</span>
+            </div>
+        </section>
+
+        <div class="zijkant">
+            <div class="info-vak">
+                <p class="melding" id="melding" role="alert" hidden></p>
+                <div aria-live="polite">
+                    <article class="info-kaartje" id="info-kaartje" hidden>
+                        <div class="info-kop">
+                            <h2 id="info-titel">Informatie</h2>
+                            <button class="knop knop-tekstlink" id="info-sluiten" type="button">
+                                <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+                                Sluiten
+                            </button>
+                        </div>
+                        <figure class="info-foto">
+                            <button class="foto-knop" id="foto-knop" type="button" aria-label="Afbeelding groot bekijken">
+                                <img data-foto src="data:," alt="">
+                                <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg>
+                            </button>
+                            <div class="foto-kiezer" data-kiezer hidden>
+                                <button class="knop knop-rond" type="button" data-stap="-1" aria-label="Vorige afbeelding">
+                                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+                                </button>
+                                <span data-teller></span>
+                                <button class="knop knop-rond" type="button" data-stap="1" aria-label="Volgende afbeelding">
+                                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+                                </button>
+                            </div>
+                            <figcaption data-bijschrift></figcaption>
+                        </figure>
+                        <p class="info-tekst" id="info-tekst"></p>
+                    </article>
+                    <button class="knop knop-wit" id="info-knop" type="button" hidden>
+                        <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7v.01"/></svg>
+                        <span class="knop-tekst">Info</span>
+                    </button>
+                </div>
+            </div>
+
+            <section class="kaart-vak" aria-label="Kaart van de Oudegracht">
+                <div id="kaart"></div>
+            </section>
+        </div>
     </main>
 
-    <footer class="site-footer">
-        <p>Het Utrechts Archief</p>
-    </footer>
+    <dialog class="startscherm" id="startscherm" aria-labelledby="start-titel">
+        <img class="kop-logo" src="img/logo-hua.svg" alt="Het Utrechts Archief" width="121" height="120">
+        <div class="start-inhoud">
+            <p class="streepjes" aria-hidden="true">//////////</p>
+            <h2 id="start-titel">Vaar mee over de Oudegracht van 1929</h2>
+            <p class="start-tekst">Tussen de Gaardbrug en de Bezembrug ligt een bijzonder stuk van de Utrechtse Oudegracht. Je vindt er historische bruggen, oude handelshuizen, werfkelders en sporen van het middeleeuwse handelsleven. Een aantal plekken worden tijdens het boottochtje uitgelicht.</p>
+            <ol class="stappen">
+                <li>
+                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>
+                    Kijk naar de film, gemaakt vanaf een boot.
+                </li>
+                <li>
+                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h18l-3 5H6zM11 3v9H5zM14 5v7h4z"/></svg>
+                    Volg het bootje op de kaart.
+                </li>
+                <li>
+                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                    Tik op een punt om erheen te varen.
+                </li>
+            </ol>
+            <form method="dialog">
+                <button class="knop knop-start" type="submit" autofocus>
+                    Start de vaartocht
+                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+                </button>
+            </form>
+        </div>
+    </dialog>
 
-    <script src="js/script.js"></script>
+    <dialog class="foto-venster" id="foto-venster" aria-label="Afbeelding groot">
+        <img data-foto src="data:," alt="">
+        <p data-bijschrift></p>
+        <div class="foto-balk">
+            <div class="foto-kiezer" data-kiezer hidden>
+                <button class="knop knop-rond" type="button" data-stap="-1" aria-label="Vorige afbeelding">
+                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+                </button>
+                <span data-teller></span>
+                <button class="knop knop-rond" type="button" data-stap="1" aria-label="Volgende afbeelding">
+                    <svg class="icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+            <form method="dialog">
+                <button class="knop knop-start" type="submit" autofocus>Sluiten</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog class="wachtstand" id="wachtstand" aria-label="Wachtstand">
+        <form method="dialog">
+            <button class="wacht-knop" type="submit" autofocus>
+                <span class="knop knop-start">Tik op het scherm om te beginnen</span>
+            </button>
+        </form>
+    </dialog>
+
+    <dialog class="colofon" id="colofon" aria-labelledby="colofon-titel">
+        <div class="colofon-kop">
+            <img class="kop-logo" src="img/logo-hua.svg" alt="" width="121" height="120">
+            <h2 id="colofon-titel">Colofon</h2>
+        </div>
+        <div class="colofon-inhoud">
+            <h3>Het Utrechts Archief</h3>
+            <p>Het Utrechts Archief is het geheugen van de stad en de provincie Utrecht. Het bewaart documenten, foto's, kaarten en films over de geschiedenis van Utrecht, voor iedereen. Bezoekadres: Hamburgerstraat 28, Utrecht.</p>
+            <h3>Deze applicatie</h3>
+            <p>Deze applicatie hoort bij de tentoonstelling Ontmoet de Oudegracht. In 2027 bestaat de Oudegracht 900 jaar. De film uit 1929 is gemaakt door Polygoon. De film, de teksten en de afbeeldingen komen van Het Utrechts Archief. De vormen op de kaart zijn van OpenStreetMap (openstreetmap.org/copyright).</p>
+            <h3>Gemaakt door</h3>
+            <p>Lars (LarsM.dev), student Webdevelopment aan het Grafisch Lyceum Utrecht.</p>
+            <form method="dialog">
+                <button class="knop knop-start" type="submit" autofocus>Sluiten</button>
+            </form>
+        </div>
+    </dialog>
 </body>
 </html>
