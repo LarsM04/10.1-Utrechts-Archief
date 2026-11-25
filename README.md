@@ -65,19 +65,38 @@ Handige links:
 ## Mappenstructuur
 
 ```
-README.md       uitleg over het project
-docs/           documenten (debriefing, technisch ontwerp, planning, offerte, testrapport)
-src/            de broncode
-  index.html    de startpagina van de webapplicatie
-  css/          de stylesheets
-  js/           de JavaScript bestanden
+README.md         uitleg over het project
+docs/             documenten (debriefing, technisch ontwerp, planning, offerte, testrapport)
+src/              de broncode
+  index.html      de startpagina van de webapplicatie
+  css/style.css   de opmaak
+  js/app.js       de film, de knoppen, het startscherm en de wachtstand
+  js/info.js      het informatiekaartje met de afbeeldingen
+  js/kaart.js     de kaart met de punten en het bootje
+  js/route.js     de vaarroute: waar is de boot op welk moment in de film
+  js/route.test.js  test van de vaarroute
+  data/           de vormen van de kaart en de punten (de punten tot het CMS er is)
+  fonts/          het lettertype Hanken Grotesk
+  img/            logo en favicon
+  lib/leaflet/    de kaartbibliotheek Leaflet
+  media/          de film en de afbeeldingen (staan niet in de repository)
 ```
 
 De code houd ik simpel en overzichtelijk. HTML, CSS en JavaScript staan in aparte bestanden.
 
 ## De applicatie bekijken
 
-Open `src/index.html` in de browser.
+1. Zet de film van het archief als `oudegracht-1929.mp4` in `src/media` en de afbeeldingen in `src/media/punten`. Ze zijn van het archief en staan daarom niet in de repository.
+2. Zet deze map in de map van een webserver. Ik gebruik Apache in Docker.
+3. Open `http://localhost/10.1-Utrechts-Archief/src/` in de browser. Dubbelklikken op `index.html` werkt niet, omdat de punten met `fetch` worden opgehaald.
+
+De test van de vaarroute draai je met `node src/js/route.test.js`. De applicatie zelf gebruikt geen Node.js.
+
+## Bronnen
+
+- Teksten en afbeeldingen bij de punten: Het Utrechts Archief, uit het bestand 'Bronmateriaal en info'. De nummers van de afbeeldingen staan in `src/data/punten.json`.
+- Kaart: [OpenStreetMap](https://www.openstreetmap.org/copyright), met [Leaflet](https://leafletjs.com/) (BSD-2-licentie). De vormen op de kaart staan in `src/data/kaart.json` en vallen onder de ODbL.
+- Lettertype: [Hanken Grotesk](https://github.com/marcologous/hanken-grotesk) (SIL Open Font License).
 
 ## Planning
 
