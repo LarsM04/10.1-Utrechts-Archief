@@ -2,7 +2,7 @@
 # Deze staan alleen lokaal, omdat ze niet van mij zijn en de repo openbaar is
 docs/opdracht/
 
-# De film uit 1929 is van Het Utrechts Archief en staat daarom ook alleen lokaal
+# De film uit 1929 en de afbeeldingen zijn van Het Utrechts Archief en staan daarom ook alleen lokaal
 src/media/
 
 # Bestanden van het besturingssysteem
